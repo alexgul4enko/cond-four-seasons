@@ -1,0 +1,126 @@
+.main {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+  margin: 0 auto 0 auto;
+  max-width: 1440px;
+  width: 100%;
+  padding: 26px  0 32px 0;
+  position: relative;
+}
+
+.title {
+  padding: 0 32px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #262626;
+}
+
+.head {
+  background-color: #F9F9F9;
+  .headerCell {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666866;
+    line-height: 18px;
+  }
+}
+
+.table-wrapper {
+  position: relative;
+}
+
+.loader {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  .circle {
+    color: #89C32E;
+  }
+}
+
+.body:empty {
+  min-height: 400px;
+  height: 400px;
+}
+
+.mm {
+  margin: 0;
+  font-size: 12px;
+  color: #A0A1A0;
+  text-align: left;
+}
+
+.table {
+  tr > th:first-of-type,
+  tr > td:first-of-type {
+    padding-left: 30px;
+  }
+  tr > th:last-of-type,
+  tr > td:last-of-type {
+    padding-right: 30px;
+  }
+  thead tr th {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  tbody,
+  thead {
+    tr {
+      th:nth-child(2) {
+        text-align: left;
+        width: 160px;
+        max-width: 160px;
+        min-width: 160px;
+      }
+      td:nth-child(2) {
+        text-align: right;
+        width: 160px;
+        max-width: 160px;
+        min-width: 160px;
+        span {
+          padding-right: 20px;
+        }
+      }
+      th:nth-child(3) {
+        text-align: left;
+        span {
+          text-align: left;
+        }
+      }
+      th:nth-child(3),
+      td:nth-child(3) {
+        width: 110px;
+        max-width: 110px;
+      }
+      th:nth-child(4),
+      td:nth-child(4) {
+        width: 300px;
+        max-width: 300px;
+        min-width: 300px;
+        text-align: right;
+      }
+    }
+  }
+  tbody tr td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    &:first-of-type {
+      color: #00BCD8;
+    }
+  }
+}
+
+.icon {
+  color: #89C32E;
+}
+
+.revert {
+  transform: scale(1, -1);
+}

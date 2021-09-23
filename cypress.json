@@ -1,0 +1,18 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "video": false,
+  "chromeWebSecurity": false,
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "reporterEnabled": "spec, cypress-sonarqube-reporter, mocha-junit-reporter",
+    "mochaJunitReporterReporterOptions": {
+      "mochaFile": "test-results/test-output-[hash].xml",
+      "toConsole": true
+    },
+    "cypressSonarqubeReporterReporterOptions": {
+      "outputDir": "reports",
+      "useAbsoluteSpecPath": true,
+      "preserveSpecsDir": false
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.main {
+  border-radius: 2px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  background-color: #FFFFFF;
+  padding: 22px 30px 22px 0;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+  }
+  .title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+    color: #000000;
+  }
+  .description {
+    font-size: 12px;
+    font-weight: normal;
+    color: #666866;
+    margin: 18px 0;
+    padding-left: 30px;
+  }
+  .close {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    color: #A0A1A0;
+    font-size: 18px;
+    transition: transform 0.3s;
+    &:hover {
+      transform: rotate(180deg) scale(1.2);
+    }
+  }
+}
+
+.btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  :global(.recharts-wrapper) {
+    cursor: pointer !important;
+  }
+}
+
+:global(.recharts-cartesian-axis-line) {
+  stroke: #F5F5F5;
+}
+
+:global(.recharts-cartesian-axis-tick-value) {
+  fill: #A0A1A0;
+  font-size: 11px;
+}
+
+:global(.recharts-cartesian-grid-horizontal > line) {
+  stroke: #F5F5F5;
+}
+
+.custom-tooltip {
+  background: #6F7CC7;
+  font-size: 12px;
+  color: #FFFFFF;
+  padding: 4px 8px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}

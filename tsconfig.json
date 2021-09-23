@@ -1,0 +1,3 @@
+{
+    "extends": "cond-app-scripts/bin",
+}

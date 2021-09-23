@@ -1,0 +1,1 @@
+SONAR_COVERAGE_EXCLUSIONS=src/**/*.style.ts,src/**/*.style.tsx,src/**/**stories.ts,src/**/**stories.tsx,src/**/index.ts
