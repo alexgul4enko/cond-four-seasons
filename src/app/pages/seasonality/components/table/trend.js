@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import moment from 'moment';
+import { tickFormatter } from './components/spark/utils';
 import styles from './table.module.scss';
 
 function findMaxIndex(data) {
@@ -27,7 +28,7 @@ export function Trend({ data, month }) {
         const icon = maxIndex === index
             ? <>🔥</>
             : (<i className={`fak fa-rise ${styles.icon} ${maxIndex < index ? styles.revert : ''}`}></i>);
-        return <span>{item && item.value && item.value.toLocaleString()} {icon}</span>;
+        return <span>{tickFormatter(item && item.value) || 0} {icon}</span>;
     }, [data, month]);
 
     return trend;
