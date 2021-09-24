@@ -27,7 +27,7 @@ export function Trend({ data, month }) {
         const icon = maxIndex === index
             ? <>🔥</>
             : (<i className={`fak fa-rise ${styles.icon} ${maxIndex < index ? styles.revert : ''}`}></i>);
-        return <span>{item && item.value} {icon}</span>;
+        return <span>{item && item.value && item.value.toLocaleString()} {icon}</span>;
     }, [data, month]);
 
     return trend;

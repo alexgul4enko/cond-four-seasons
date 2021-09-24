@@ -3,7 +3,7 @@ import moment from 'moment';
 import Popover from '@material-ui/core/Popover';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, LineChart, Line, ReferenceLine, Tooltip } from 'recharts';
 import { CustomizedLabel } from './label';
-import { findMax, generateColor } from './utils';
+import { findMax, generateColor, tickFormatter } from './utils';
 import styles from './spark..module.scss';
 
 const anchorOrigin = {
@@ -70,7 +70,7 @@ export function Spark({ data }) {
                             tickLine={false}
                         />
                         <Tooltip content={<CustomTooltip />} />
-                        <YAxis axisLine={false} tickLine={false} interval='preserveStart' />
+                        <YAxis axisLine={false} tickLine={false} interval='preserveStart' tickFormatter={tickFormatter} />
                         <Line type='linear' strokeWidth={3} dataKey='value' stroke='#89c32e' dot={false} />
                         <ReferenceLine
                             x={max.monthName}
@@ -88,7 +88,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
             <div className={styles.customTooltip}>
-                <b>{`${label} : `}</b> {payload[0].value}
+                <b>{`${label} : `}</b> {tickFormatter(payload[0].value) || 0}
             </div>
         );
     }
