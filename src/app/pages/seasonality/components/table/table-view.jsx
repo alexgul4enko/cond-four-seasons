@@ -30,7 +30,7 @@ export function TableView({ month, data, isLoading }) {
                 <TableRow key={item.search.queryPhrase}>
                     <TableCell>{item.search.queryPhrase}</TableCell>
                     <TableCell><Trend data={item.trend} month={month} /></TableCell>
-                    <TableCell><Spark data={item.trend} /></TableCell>
+                    <TableCell><Spark data={item.trend} name={item.search.queryPhrase} /></TableCell>
                     <TableCell>{getRecomendation()}</TableCell>
                 </TableRow>
             );
