@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import moment from 'moment';
 import { tickFormatter } from './components/spark/utils';
 import styles from './table.module.scss';
 
@@ -21,7 +20,10 @@ export function Trend({ data, month }) {
         if (!Array.isArray(data)) return null;
 
         const index = data.findIndex(
-            (item) => moment([item.year, item.month, 1]).format('MMMM') === month
+            (item) => {
+                const itemMonth = new Date(item.year, item.month - 1).toLocaleString('en-us', { month: 'long' });
+                return itemMonth === month;
+            }
         );
         const item = data[index];
         const maxIndex = findMaxIndex(data);

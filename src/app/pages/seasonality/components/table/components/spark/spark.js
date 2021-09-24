@@ -1,7 +1,6 @@
-import { useMemo, useState, useCallback } from 'react';
-import moment from 'moment';
+import { useCallback, useMemo, useState } from 'react';
 import Popover from '@material-ui/core/Popover';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, LineChart, Line, ReferenceLine, Tooltip } from 'recharts';
+import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, ReferenceLine, Tooltip, XAxis, YAxis } from 'recharts';
 import { CustomizedLabel } from './label';
 import { findMax, generateColor, tickFormatter } from './utils';
 import styles from './spark..module.scss';
@@ -11,7 +10,7 @@ const anchorOrigin = {
     horizontal: 'left'
 };
 
-export function Spark({ data }) {
+export function Spark({ data, name }) {
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = useCallback((event) => {
@@ -27,7 +26,7 @@ export function Spark({ data }) {
         const colors = generateColor(data);
         return data.map((item) => ({
             month: item.year + item.month,
-            monthName: moment([item.year, item.month, 1]).format('MMM'),
+            monthName: new Date(item.year, item.month - 1).toLocaleString('en-us', { month: 'short' }),
             value: item.value,
             color: colors[item.value]
         }));
@@ -52,7 +51,7 @@ export function Spark({ data }) {
             >
                 <div className={styles.main}>
                     <header className={styles.header}>
-                        <h3 className={styles.title}>Non-Branded Keywords</h3>
+                        <h3 className={styles.title}>{name}</h3>
                         <button onClick={handleClose} className={styles.close}><i className='far fa-times'></i></button>
                     </header>
                     <p className={styles.description}>Forecasted monthly search volume</p>
