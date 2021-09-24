@@ -66,9 +66,8 @@ export function Spark({ data }) {
                         <CartesianGrid horizontal vertical={false} />
                         <XAxis
                             dataKey='monthName'
-                            minTickGap={0}
+                            minTickGap={2}
                             tickLine={false}
-                            allowDataOverflow
                         />
                         <Tooltip content={<CustomTooltip />} />
                         <YAxis axisLine={false} tickLine={false} interval='preserveStart' />
